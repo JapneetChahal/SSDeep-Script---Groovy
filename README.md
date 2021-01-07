@@ -8,7 +8,7 @@ Generates score on basis of string similarity.
    - permission java.io.FilePermission "ALL FILES", "execute";
    - permission org.elasticsearch.script.ClassPermission "*";
 3. Save the script in /etc/elasticsearch/scripts/
-4. Restart ElastiSearch.
+4. Restart ElasticSearch.
 
 **Query to Generate Scores:**
 ```
