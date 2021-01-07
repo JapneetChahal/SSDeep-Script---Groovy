@@ -42,7 +42,31 @@ curl -X GET "localhost:9200/logvehere-probe-*/_search?pretty" -H 'Content-Type: 
   "_source": ["recon.context_hash"]
 }
 ' 
+```
 
+curl -X POST "localhost:9200/_search?pretty" -H 'Content-Type: application/json' -d'
+{
+  "query": {
+    "function_score": {
+      "functions": [
+        {
+          "script_score": {
+            "script": {
+                "file":"ssdeep",
+                "lang":"groovy",
+                "params":{
+                  "field" : "recon.context_hash.keyword",
+                  "term" : "192:D1tNwAuO6Ak7ZYrlLHe3l9AmW9NIpycqAJDOgENi2QVGm8S6LQawRUenI7u:1f6AktElCom+mRqKG"
+                }
+
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+'
 
 
 ```
