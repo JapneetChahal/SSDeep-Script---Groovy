@@ -5,7 +5,6 @@ Generates score on basis of string similarity.
 1. Copy the jar files( *spamsum.jar* & *string-similarity.jar*) in /usr/share/elasticsearch/modules/lang-groovy
 2. Give the following permissions in plugin-security.policy in lang-groovy folder:
    - permission java.io.FilePermission "ALL FILES", "read"; 
-   - permission java.io.FilePermission "/home/japneet/java-spamsum-0.2.jar", "read";
    - permission java.io.FilePermission "ALL FILES", "execute";
    - permission org.elasticsearch.script.ClassPermission "*";
 3. Save the script in /etc/elasticsearch/scripts/
