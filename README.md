@@ -1,7 +1,7 @@
-### SSDeep Script - Groovy
+# SSDeep Script - Groovy
 Generates score on basis of string similarity. 
 
-**To use the Script:-**
+**To use the Script :-**
 1. Copy the jar files( *spamsum.jar* & *string-similarity.jar*) in /usr/share/elasticsearch/modules/lang-groovy
 2. Give the following permissions in plugin-security.policy in lang-groovy folder:
    - permission java.io.FilePermission "ALL FILES", "read"; 
@@ -11,7 +11,7 @@ Generates score on basis of string similarity.
 3. Save the script in /etc/elasticsearch/scripts/
 4. Restart ElastiSearch.
 
-**Query to Generate Scores**
+**Query to Generate Scores:**
 ```
 curl -X GET "localhost:9200/logvehere-probe-*/_search?pretty" -H 'Content-Type: application/json' -d'
 {
@@ -42,7 +42,8 @@ curl -X GET "localhost:9200/logvehere-probe-*/_search?pretty" -H 'Content-Type: 
   "_source": ["recon.context_hash"]
 }
 ' 
-```
+
+
 
 curl -X POST "localhost:9200/_search?pretty" -H 'Content-Type: application/json' -d'
 {
@@ -57,8 +58,7 @@ curl -X POST "localhost:9200/_search?pretty" -H 'Content-Type: application/json'
                 "params":{
                   "field" : "recon.context_hash.keyword",
                   "term" : "192:D1tNwAuO6Ak7ZYrlLHe3l9AmW9NIpycqAJDOgENi2QVGm8S6LQawRUenI7u:1f6AktElCom+mRqKG"
-                }
-
+              }
             }
           }
         }
@@ -67,6 +67,6 @@ curl -X POST "localhost:9200/_search?pretty" -H 'Content-Type: application/json'
   }
 }
 '
-
-
 ```
+
+
